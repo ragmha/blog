@@ -11,8 +11,6 @@ import PostsShow from "./components/PostsShow";
 
 import reducers from "./reducers";
 
-console.log(2 + 2);
-
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
 ReactDOM.render(
