@@ -1,4 +1,5 @@
-import _ from "lodash";
+import mapKeys from "lodash.mapkeys";
+import omit from "lodash.omit";
 
 import { FETCH_POSTS, FETCH_POST, DELETE_POST } from "../constants";
 
@@ -11,10 +12,10 @@ export default function(state = {}, action) {
         [data.id]: data
       };
     case FETCH_POSTS:
-      return _.mapKeys(action.payload.data, "id");
+      return mapKeys(action.payload.data, "id");
 
     case DELETE_POST:
-      return _.omit(state, action.payload);
+      return omit(state, action.payload);
 
     default:
       return state;
