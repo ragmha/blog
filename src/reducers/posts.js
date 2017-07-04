@@ -5,10 +5,10 @@ import { FETCH_POSTS, FETCH_POST } from "../constants";
 export default function(state = {}, action) {
   switch (action.type) {
     case FETCH_POST:
-      const { id, data } = action.payload.data;
+      const data = action.payload.data;
       return {
         ...state,
-        [id]: data
+        [data.id]: data
       };
     case FETCH_POSTS:
       return _.mapKeys(action.payload.data, "id");
